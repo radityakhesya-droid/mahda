@@ -54,8 +54,7 @@
         <h2>Sejarah Sekolah</h2>
         <div class="divider"></div>
         <div class="text-container">
-            <p>MA Mathlabul Huda didirikan sebagai bentuk respon para tokoh masyarakat, kiai, dan sesepuh Desa Babakbawo terhadap kebutuhan pendidikan tingkat menengah atas yang berbasis nilai-nilai Islam Ahlussunnah wal Jama’ah.</p>
-            <p>Berada di bawah naungan Yayasan Mathlabul Huda, madrasah ini merupakan kelanjutan logis dari jenjang MI dan MTs yang sudah ada sebelumnya. Madrasah ini bertujuan agar putra-putri daerah di wilayah Dukun mendapatkan pendidikan formal berkualitas dengan tradisi NU.</p>
+            <p>MA Mathlabul Huda didirikan sebagai bentuk respon para tokoh masyarakat, kiai, dan sesepuh Desa Babakbawo terhadap kebutuhan pendidikan Islam Ahlussunnah wal Jama’ah.</p>
         </div>
     </section>
 
@@ -66,17 +65,17 @@
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-book-open"></i></div>
                 <h4>Kurikulum Ganda</h4>
-                <p>Menggabungkan kurikulum nasional (Kemenag) dengan kurikulum lokal pesantren/diniyah.</p>
+                <p>Integrasi kurikulum nasional dan lokal pesantren.</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-users"></i></div>
                 <h4>Pusat Kaderisasi</h4>
-                <p>Wadah utama bagi organisasi IPNU dan IPPNU tingkat ranting untuk melatih kepemimpinan.</p>
+                <p>Wadah aktif organisasi IPNU dan IPPNU.</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-handshake"></i></div>
                 <h4>Kedekatan Komunitas</h4>
-                <p>Hubungan erat antara sekolah dan masyarakat guna pengawasan moral siswa secara kolektif.</p>
+                <p>Sinergi kuat antara wali murid dan madrasah.</p>
             </div>
         </div>
     </section>
@@ -89,39 +88,14 @@
                 <div class="card-inner">
                     <div class="icon-box"><i class="fas fa-graduation-cap"></i></div>
                     <h3>Melanjutkan Studi</h3>
-                    <p>Banyak alumni yang berhasil masuk ke perguruan tinggi Islam maupun universitas umum.</p>
+                    <p>Alumni berhasil masuk ke berbagai perguruan tinggi negeri maupun swasta Islam.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-inner">
                     <div class="icon-box"><i class="fas fa-hand-holding-heart"></i></div>
                     <h3>Pemberdayaan Masyarakat</h3>
-                    <p>Membekali siswa agar siap berkontribusi dalam pembangunan desa dan organisasi keagamaan.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="visi-misi" class="content-section bg-light reveal">
-        <h2>Visi & Misi</h2>
-        <div class="divider"></div>
-        <div class="grid-container">
-            <div class="card">
-                <div class="card-inner">
-                    <div class="icon-box"><i class="fas fa-eye"></i></div>
-                    <h3>Visi</h3>
-                    <p class="visi-text">"Terwujudnya insan yang unggul dalam prestasi, mulia dalam akhlak, dan mandiri dalam beramal."</p>
-                </div>
-            </div>
-            <div class="card card-misi">
-                <div class="card-inner">
-                    <div class="icon-box"><i class="fas fa-bullseye"></i></div>
-                    <h3>Misi</h3>
-                    <ul class="misi-list">
-                        <li>Menyelenggarakan pendidikan formal integratif ilmu umum dan agama.</li>
-                        <li>Menanamkan nilai-nilai Islam ala Nahdlatul Ulama.</li>
-                        <li>Meningkatkan kualitas SDM berdaya saing tinggi.</li>
-                    </ul>
+                    <p>Siap berkontribusi aktif dalam pembangunan desa dan organisasi keagamaan.</p>
                 </div>
             </div>
         </div>
@@ -134,6 +108,7 @@
     </footer>
 
     <script>
+        // Efek Scroll Navbar
         window.onscroll = function() {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) { nav.classList.add('nav-active'); } 
@@ -141,6 +116,7 @@
             reveal();
         };
 
+        // Animasi Muncul saat Scroll
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -151,13 +127,11 @@
         }
         reveal();
 
-        // Otomatis tutup menu saat link diklik di HP
+        // Tutup menu otomatis saat link diklik (Mobile)
         const navLinks = document.querySelectorAll('nav ul li a');
         const checkBtn = document.getElementById('check');
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                checkBtn.checked = false;
-            });
+            link.addEventListener('click', () => { checkBtn.checked = false; });
         });
     </script>
 </body>
