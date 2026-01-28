@@ -23,7 +23,9 @@
         
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
         </label>
 
         <ul>
@@ -53,7 +55,7 @@
         <div class="divider"></div>
         <div class="text-container">
             <p>MA Mathlabul Huda didirikan sebagai bentuk respon para tokoh masyarakat, kiai, dan sesepuh Desa Babakbawo terhadap kebutuhan pendidikan tingkat menengah atas yang berbasis nilai-nilai Islam Ahlussunnah wal Jama’ah.</p>
-            <p>Berada di bawah naungan Yayasan Mathlabul Huda, madrasah ini merupakan kelanjutan logis dari jenjang MI dan MTs yang sudah ada sebelumnya. Pendiriannya bertujuan agar putra-putri daerah di wilayah Dukun, khususnya Desa Babakbawo, tidak perlu pergi jauh ke kota untuk mendapatkan pendidikan formal yang berkualitas namun tetap kental dengan suasana pesantren dan tradisi NU.</p>
+            <p>Berada di bawah naungan Yayasan Mathlabul Huda, madrasah ini merupakan kelanjutan logis dari jenjang MI dan MTs yang sudah ada sebelumnya. Madrasah ini bertujuan agar putra-putri daerah di wilayah Dukun mendapatkan pendidikan formal berkualitas dengan tradisi NU.</p>
         </div>
     </section>
 
@@ -64,17 +66,17 @@
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-book-open"></i></div>
                 <h4>Kurikulum Ganda</h4>
-                <p>Menggabungkan kurikulum nasional (Kementerian Agama) dengan kurikulum lokal pesantren/diniyah.</p>
+                <p>Menggabungkan kurikulum nasional (Kemenag) dengan kurikulum lokal pesantren/diniyah.</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-users"></i></div>
                 <h4>Pusat Kaderisasi</h4>
-                <p>Wadah utama bagi organisasi IPNU dan IPPNU tingkat ranting untuk melatih kepemimpinan sejak dini.</p>
+                <p>Wadah utama bagi organisasi IPNU dan IPPNU tingkat ranting untuk melatih kepemimpinan.</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-handshake"></i></div>
                 <h4>Kedekatan Komunitas</h4>
-                <p>Hubungan erat antara sekolah, wali murid, dan masyarakat guna pengawasan moral siswa secara kolektif.</p>
+                <p>Hubungan erat antara sekolah dan masyarakat guna pengawasan moral siswa secara kolektif.</p>
             </div>
         </div>
     </section>
@@ -94,7 +96,7 @@
                 <div class="card-inner">
                     <div class="icon-box"><i class="fas fa-hand-holding-heart"></i></div>
                     <h3>Pemberdayaan Masyarakat</h3>
-                    <p>Membekali siswa agar siap berkontribusi dalam pembangunan desa dan aktif di organisasi keagamaan.</p>
+                    <p>Membekali siswa agar siap berkontribusi dalam pembangunan desa dan organisasi keagamaan.</p>
                 </div>
             </div>
         </div>
@@ -108,7 +110,7 @@
                 <div class="card-inner">
                     <div class="icon-box"><i class="fas fa-eye"></i></div>
                     <h3>Visi</h3>
-                    <p class="visi-text">"Terwujudnya insan yang unggul dalam prestasi, mulia dalam akhlak, dan mandiri dalam beramal berlandaskan aqidah Islam Ahlussunnah Wal Jama’ah An-Nahdliyah."</p>
+                    <p class="visi-text">"Terwujudnya insan yang unggul dalam prestasi, mulia dalam akhlak, dan mandiri dalam beramal."</p>
                 </div>
             </div>
             <div class="card card-misi">
@@ -116,9 +118,9 @@
                     <div class="icon-box"><i class="fas fa-bullseye"></i></div>
                     <h3>Misi</h3>
                     <ul class="misi-list">
-                        <li>Menyelenggarakan pendidikan formal yang integratif antara ilmu umum dan ilmu agama.</li>
-                        <li>Menanamkan nilai-nilai Islam ala Nahdlatul Ulama dalam kehidupan sehari-hari.</li>
-                        <li>Meningkatkan kualitas SDM agar mampu bersaing di jenjang pendidikan tinggi.</li>
+                        <li>Menyelenggarakan pendidikan formal integratif ilmu umum dan agama.</li>
+                        <li>Menanamkan nilai-nilai Islam ala Nahdlatul Ulama.</li>
+                        <li>Meningkatkan kualitas SDM berdaya saing tinggi.</li>
                     </ul>
                 </div>
             </div>
@@ -148,6 +150,15 @@
             }
         }
         reveal();
+
+        // Otomatis tutup menu saat link diklik di HP
+        const navLinks = document.querySelectorAll('nav ul li a');
+        const checkBtn = document.getElementById('check');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                checkBtn.checked = false;
+            });
+        });
     </script>
 </body>
 </html>
