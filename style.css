@@ -62,6 +62,18 @@ nav.nav-active {
     justify-content: center;
     align-items: center;
     flex-shrink: 0; /* Mencegah logo gepeng */
+    animation: logoPulse 2s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(255, 215, 0, 0);
+        transform: scale(1.05);
+    }
 }
 
 .logo-circle img {
@@ -135,6 +147,27 @@ nav ul li a:hover {
 .hero-content h1 {
     font-size: clamp(2rem, 8vw, 3.5rem);
     margin-bottom: 10px;
+    animation: slideDown 1s ease-out, glow 3s ease-in-out infinite;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6);
+    }
 }
 
 /* ANIMASI JALAN (TYPING) */
@@ -152,6 +185,7 @@ nav ul li a:hover {
     overflow: hidden;
     width: 0;
     animation: typing 3.5s steps(30, end) forwards, blink 0.8s infinite;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 @keyframes typing {
@@ -160,13 +194,30 @@ nav ul li a:hover {
 }
 
 @keyframes blink {
-    50% { border-color: transparent; }
+    0%, 49%, 51%, 100% { 
+        border-color: rgba(255, 215, 0, 1);
+    }
+    50% { 
+        border-color: transparent; 
+    }
 }
 
 .hero-p {
     font-size: 1.1rem;
     margin-bottom: 25px;
     opacity: 0.9;
+    animation: fadeInUp 1.2s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
 }
 
 .btn-main {
@@ -179,27 +230,95 @@ nav ul li a:hover {
     display: inline-block;
     transition: 0.3s;
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    animation: bounceInUp 1.5s ease-out 0.6s both;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes bounceInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    50% {
+        opacity: 1;
+    }
+    65% {
+        transform: translateY(-8px);
+    }
+    80% {
+        transform: translateY(4px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.btn-main:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: left 0.5s ease;
+}
+
+.btn-main:hover:before {
+    left: 100%;
 }
 
 .btn-main:hover {
     background: white;
     transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
 }
 
 /* --- CONTENT SECTIONS --- */
 .content-section {
     padding: 100px 10%;
     text-align: center;
+    animation: scaleIn 0.8s ease-out forwards;
+    opacity: 0;
 }
 
-.content-section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-    color: var(--hijau-tua);
+.feature-item:nth-child(1) {
+    animation-delay: 0.1s;
 }
 
-.divider {
-    width: 80px;
+.feature-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.feature-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.bg-green .feature-item {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.feature-item:hover, .card-inner:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.feature-item:hover {
+    background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,215,0,0.05)
     height: 4px;
     background: var(--emas);
     margin: 0 auto 40px;
@@ -212,6 +331,20 @@ nav ul li a:hover {
 
 .bg-light {
     background: var(--abu-light);
+}
+
+    transition: 0.3s ease;
+}
+
+.feature-item:hover .feature-icon,
+.card-inner:hover .icon-box {
+    transform: scale(1.2) rotateY(360deg);
+    animation: iconBounce 0.6s ease;
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: scale(1.2); }
+    50% { transform: scale(1.3); }
 }
 
 /* --- GRID & CARDS --- */
@@ -260,6 +393,18 @@ nav ul li a:hover {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+    animation: revealFade 1s ease-out;
+}
+
+@keyframes revealFade {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --- FOOTER --- */
