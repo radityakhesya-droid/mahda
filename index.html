@@ -39,7 +39,7 @@
 
     <header id="dashboard" class="hero">
         <div class="hero-content">
-            <h1 class="animate-pop">MA MATHLABUL HUDA</h1>
+            <h1>MA MATHLABUL HUDA</h1>
             <div class="tagline-container">
                 <div class="tagline">Unggul, Mulia, Mandiri</div>
             </div>
@@ -53,13 +53,13 @@
     <section id="sejarah" class="content-section reveal">
         <h2>Sejarah Sekolah</h2>
         <div class="divider"></div>
-        <div class="text-container">
-            <p>MA Mathlabul Huda didirikan sebagai bentuk respon para tokoh masyarakat, kiai, dan sesepuh Desa Babakbawo terhadap kebutuhan pendidikan Islam Ahlussunnah wal Jama’ah.</p>
+        <div class="text-container" style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+            <p>MA Mathlabul Huda didirikan sebagai respon tokoh masyarakat terhadap kebutuhan pendidikan Islam Ahlussunnah wal Jama’ah di Desa Babakbawo.</p>
         </div>
     </section>
 
     <section id="keunggulan" class="content-section bg-green reveal">
-        <h2 style="color: white;">Keunggulan & Karakteristik</h2>
+        <h2 style="color: white;">Keunggulan</h2>
         <div class="divider" style="background: var(--emas);"></div>
         <div class="feature-grid">
             <div class="feature-item">
@@ -72,32 +72,6 @@
                 <h4>Pusat Kaderisasi</h4>
                 <p>Wadah aktif organisasi IPNU dan IPPNU.</p>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-handshake"></i></div>
-                <h4>Kedekatan Komunitas</h4>
-                <p>Sinergi kuat antara wali murid dan madrasah.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="prospek" class="content-section reveal">
-        <h2>Prospek Lulusan</h2>
-        <div class="divider"></div>
-        <div class="grid-container">
-            <div class="card">
-                <div class="card-inner">
-                    <div class="icon-box"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Melanjutkan Studi</h3>
-                    <p>Alumni berhasil masuk ke berbagai perguruan tinggi negeri maupun swasta Islam.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="icon-box"><i class="fas fa-hand-holding-heart"></i></div>
-                    <h3>Pemberdayaan Masyarakat</h3>
-                    <p>Siap berkontribusi aktif dalam pembangunan desa dan organisasi keagamaan.</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -108,7 +82,6 @@
     </footer>
 
     <script>
-        // Efek Scroll Navbar
         window.onscroll = function() {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) { nav.classList.add('nav-active'); } 
@@ -116,7 +89,6 @@
             reveal();
         };
 
-        // Animasi Muncul saat Scroll
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -127,7 +99,6 @@
         }
         reveal();
 
-        // Tutup menu otomatis saat link diklik (Mobile)
         const navLinks = document.querySelectorAll('nav ul li a');
         const checkBtn = document.getElementById('check');
         navLinks.forEach(link => {
